@@ -1,0 +1,422 @@
+﻿div.logo {
+    font-size: 40px;
+    text-align: center;
+    background: #fd8904;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    border-radius: 30px;
+}
+
+a:active {
+    color: #000000;
+}
+
+* {
+    outline: none;
+}
+
+img.logo {
+    /* border: 1px solid grey; */
+    padding: 20px 20px 0px 20px;
+}
+
+#LogInBtn {
+    float: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 30px 20px 0px 0px;
+    border: 1px solid grey;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+    #LogInBtn:hover {
+        color: white;
+        background: #fd8904;
+    }
+
+a#LogInBtnLink:visited {
+    color: #000000;
+}
+
+a#LogInBtnLink:link {
+    color: #000000;
+}
+
+#OrderingInBtn {
+    float: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    background: #fd8904;
+    color: #ffffff;
+    border: 1px solid grey;
+    margin-top: 30px;
+    margin-right: 0px;
+    padding: 20px 115px 20px 140px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+    #OrderingInBtn:hover {
+        color: white;
+        background: #fd8904c9;
+    }
+
+a#OrderingInBtnLink:visited {
+    color: #000000;
+}
+
+.BuyBtn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #b4b4b4;
+    margin-top: 10px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+    .BuyBtn:hover {
+        font-size: 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background: #fd8904;
+        color: #ffffff;
+        border: 1px solid #fd8904;
+        /* box-shadow: 0 0 5px #b9b9b9; */
+        margin-top: 10px;
+        padding: 10px 30px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+#CartBtn {
+    float: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 30px 0px 0px 0px;
+    padding: 15px;
+}
+
+    #CartBtn:hover {
+        color: crimson;
+    }
+
+a#CartBtnLink:visited {
+    color: #000000;
+}
+
+a#CartBtnLink:link {
+    color: #000000;
+}
+
+#AboutUsBtn {
+    float: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 30px 0px 0px 0px;
+    padding: 15px;
+}
+
+    #AboutUsBtn:hover {
+        color: crimson;
+    }
+
+a#AboutUsBtnLink:visited {
+    color: #000000;
+}
+
+#searchBox {
+    float: right;
+    margin: 40px 400px 0px 0px;
+    padding: 10px 0px 10px 10px;
+    width: 450px;
+    border: 0px solid grey;
+    border-radius: 5px;
+    background: rgba(212, 212, 212, 0.596);
+}
+
+    #searchBox:hover {
+        background: rgb(255, 255, 255);
+        /* border: 1px solid grey; */
+        box-shadow: 0 0 10px rgb(119, 119, 119);
+        border-radius: 5px;
+    }
+
+    #searchBox:focus {
+        background: rgb(255, 255, 255);
+        /* border: 1px solid grey; */
+        box-shadow: 0 0 10px rgb(119, 119, 119);
+        border-radius: 5px;
+    }
+
+#MostPopular {
+    margin-left: 335px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background: #FFFFFF;
+}
+
+a.productName:hover {
+    font-size: 17px;
+    color: rgb(255, 0, 0) !important;
+}
+
+a.sideLink:hover {
+    /* color: rgb(255, 255, 255) !important; */
+    color: #fd8904 !important;
+    text-decoration: underline !important;
+}
+
+a.sideLink {
+    color: #000000;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+}
+
+.cabinetTable {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background: white;
+    margin-left: 190px;
+}
+
+.cabinetTrTd {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 10px;
+    height: 20px;
+    width: 50px;
+}
+
+.cabinetAva {
+    width: 150px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
+
+a.productName {
+    color: blue;
+    text-decoration: underline;
+    font-size: 15px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+.productPrice {
+    /* text-shadow: -0px 0px 40px; */
+    font-size: 20px;
+    padding-top: 15px;
+    font-weight: bolder;
+    font-family: Verdana, 'Times New Roman', Times, serif;
+}
+
+.assideBar {
+    float: left;
+    width: 170px;
+    height: 500px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1.5px solid #6d6d6d;
+}
+
+    .assideBar.Filterbar {
+        float: right;
+        width: 250px;
+        border-radius: 20px 20px 20px 20px;
+        background-color: #ffffff;
+        border: 1.5px solid #6d6d6d;
+    }
+
+.OrderingBar {
+    float: left;
+    width: 400px;
+    text-align: left;
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding-top: 20px;
+    box-shadow: 0 0 10px #b4b4b4;
+    /* padding-right: 60px; */
+    /* border: 1.5px solid #6d6d6d; */
+}
+
+.OrderingForms {
+    border: 1px solid #818181;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.OrderingText {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.FilterName {
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0px 0px 0px 20px;
+}
+
+.sideLink {
+    color: black;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.numBox {
+    width: 100px;
+    border-radius: 5px;
+    margin: 0px 0px 0px 10px;
+    border: 1px solid gray;
+}
+
+.centerClass {
+    margin: 10px 0 0 470px;
+    align-self: center;
+    background: #ffffff;
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0px 0 0 5px;
+    width: 200px;
+    height: 50px;
+    font-size: 19px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+#AuthButton {
+    margin: 10px 0 0 525px;
+    width: 100px;
+    height: 50px;
+    background: #ffffff;
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    border: 1px solid gray;
+    border-radius: 7px;
+}
+
+    #AuthButton:hover {
+        background: #fd8904;
+        color: #ffffff;
+    }
+
+#RecoveryBtn {
+    width: 100px;
+    height: 50px;
+    color: #727272;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    margin-right: 145px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+    #RecoveryBtn:hover {
+        color: #2593fa;
+        text-decoration: underline;
+    }
+
+#RecBtn {
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 474px;
+    color: #000000;
+    background: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    margin-right: 145px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+    #RecBtn:hover {
+        color: #ffffff;
+        background: #fd8904;
+    }
+
+#RegButton {
+    margin: 10px 0 0 500px;
+    width: 100px;
+    height: 50px;
+    color: #727272;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+    #RegButton:hover {
+        color: #2593fa;
+        text-decoration: underline;
+    }
+
+#RegRegButton {
+    margin: 10px 0 0 485px;
+    width: 180px;
+    height: 50px;
+    background: #ffffff;
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+    #RegRegButton:hover {
+        background: #fd8904;
+        color: #ffffff;
+    }
+
+.CartProductName {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.CartProductPrice {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 50px;
+    font-size: 16px;
+    padding-top: 15px;
+    padding-right: 10px;
+    font-weight: bolder;
+}
+
+.CartCardStyle {
+    border-radius: 5px;
+    background: white;
+    margin: 10px 0 0 200px;
+    box-shadow: 0 0 10px rgb(63, 63, 63);
+    width: 750px;
+}
+
+.CartDel {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    padding-left: 35px;
+    color: rgb(143, 143, 143);
+    text-decoration: none;
+}
+
+    .CartDel:hover {
+        color: crimson;
+    }

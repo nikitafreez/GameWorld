@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GameWorld</title>
+    <link href="~/css/MyCSS.css" rel="stylesheet" />
+</head>
+
+<body style="background: rgb(238, 238, 238);">
+    <nav style="background: white; margin: -8px; padding: 0px;">
+        <a href="\Main\Auth" id="LogInBtnLink">
+            <div id="LogInBtn">Войти</div>
+        </a>
+        <a href="\Main\Cart" id="CartBtnLink">
+            <div id="CartBtn">🛒 Корзина</div>
+        </a>
+        <a href="\Main\About" id="CartBtnLink">
+            <div id="CartBtn">🛈 О нас</div>
+        </a>
+        <input type="search" name="searchBox" id="searchBox" placeholder="Поиск по сайту">
+        <!-- <div class="logo">GameWorld - Игровой магазин</div><br><br> -->
+        <a href="\Main\Main"><img src="~/images/11037Demo.png" class="logo"></a>
+        <hr noshade size="0px" color="lightgray">
+    </nav>
+    <br><br><br><br>
+    <aside class="assideBar">
+        <a href="\Main\Main" class="sideLink">Главная</a><br>
+        <a href="\Main\Catalog" class="sideLink">Каталог товаров</a>
+        <a href="\Main\About" class="sideLink">О нас</a><br>
+        <a href="\Main\Cart" class="sideLink">Корзина</a><br>
+        <a href="\Main\Auth" class="sideLink">Войти</a><br>
+        <a href="\Main\MyCabinet" class="sideLink">Личный кабинет</a><br>
+    </aside>
+    <span style="float: right; margin-right: 850px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        История
+        заказов:<br>
+        <ol>
+            <li>PS4</li>
+            <li>BloodBorne</li>
+            <li>Final Fantasy VII Remake</li>
+        </ol>
+    </span>
+    <div>
+        <table class="cabinetTable">
+            <tr class="cabinetTrTd">
+                <td class="cabinetTrTd">
+                    <img src="~/images/572434.png" class="cabinetAva">
+                </td>
+            </tr>
+            <tr class="cabinetTrTd">
+                <td class="cabinetTrTd">
+                    <span>nikitafreez</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

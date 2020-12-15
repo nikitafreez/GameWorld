@@ -1,0 +1,89 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GameWorld</title>
+    <link href="~/css/MyCSS.css" rel="stylesheet" />
+</head>
+<style>
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        background: white;
+        margin-right: 330px;
+        margin-left: auto;
+    }
+
+    tr,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 10px;
+        height: 400px;
+        width: 250px;
+    }
+</style>
+
+<body style="background: rgb(238, 238, 238);">
+    <nav style="background: white; margin: -8px; padding: 0px;">
+        <a href="\Main\Auth" id="LogInBtnLink">
+            <div id="LogInBtn">Войти</div>
+        </a>
+        <a href="\Main\Cart" id="CartBtnLink">
+            <div id="CartBtn">🛒 Корзина</div>
+        </a>
+        <a href="\Main\About" id="CartBtnLink">
+            <div id="CartBtn">🛈 О нас</div>
+        </a>
+        <input type="search" name="searchBox" id="searchBox" placeholder="Поиск по сайту">
+        <a href="\Main\Main"><img src="~/images/11037Demo.png" class="logo"></a>
+        <hr noshade size="0px" color="lightgray">
+    </nav>
+    <br><br><br><br>
+                <aside class="assideBar">
+                    <a href="\Main\Main" class="sideLink">Главная</a><br>
+                    <a href="\Main\Catalog" class="sideLink">Каталог товаров</a>
+                    <a href="\Main\About" class="sideLink">О нас</a><br>
+                    <a href="\Main\Cart" class="sideLink">Корзина</a><br>
+                    <a href="\Main\Auth" class="sideLink">Войти</a><br>
+                    <a href="\Main\MyCabinet" class="sideLink">Личный кабинет</a><br>
+                </aside>
+    <div id="MostPopular"> Самые популярные товары</div>
+    <table>
+        <tr class="mainTable">
+            <td class="mainTable">
+                <a href="#" class="productName" style="color: blue;">
+                    <img src="~/images/PS5-image.jpg"><br>
+                    PlayStation 5: Digital Edition
+                </a><br>
+                <div class="productPrice">37990 руб.</div>
+                <input type="button" value="Купить" class="BuyBtn">
+            </td>
+            <td class="mainTable">
+                <a href="#" class="productName" style="color: green;">
+                    <img src="~/images/XSex-image.jpg"><br>
+                    Xbox Series X
+                </a><br>
+                <div class="productPrice">45590 руб.</div>
+                <input type="button" value="Купить" class="BuyBtn">
+            </td>
+            <td class="mainTable">
+                <a href="#" class="productName" style="color: crimson;">
+                    <img src="~/images/NSwitch-image.jpg"><br>
+                    Nintendo Switch
+                </a><br>
+                <div class="productPrice">22990 руб.</div>
+                <input type="button" value="Купить" class="BuyBtn">
+            </td>
+        </tr>
+    </table><br>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GameWorld</title>
+    <link href="~/css/MyCSS.css" rel="stylesheet" />
+</head>
+
+<body style="background: rgb(238, 238, 238);">
+    <nav style="background: white; margin: -8px; padding: 0px;">
+        <a href="\Main\Auth" id="LogInBtnLink">
+            <div id="LogInBtn">Войти</div>
+        </a>
+        <a href="\Main\Cart" id="CartBtnLink">
+            <div id="CartBtn">🛒 Корзина</div>
+        </a>
+        <a href="\Main\About" id="CartBtnLink">
+            <div id="CartBtn">🛈 О нас</div>
+        </a>
+        <input type="search" name="searchBox" id="searchBox" placeholder="Поиск по сайту">
+        <!-- <div class="logo">GameWorld - Игровой магазин</div><br><br> -->
+        <a href="\Main\Main"><img src="~/images/11037Demo.png" class="logo"></a>
+        <hr noshade size="0px" color="lightgray">
+    </nav>
+    <br><br><br><br>
+    <aside class="assideBar">
+        <a href="\Main\Main" class="sideLink">Главная</a><br>
+        <a href="\Main\Catalog" class="sideLink">Каталог товаров</a>
+        <a href="\Main\About" class="sideLink">О нас</a><br>
+        <a href="\Main\Cart" class="sideLink">Корзина</a><br>
+        <a href="\Main\Auth" class="sideLink">Войти</a><br>
+        <a href="\Main\MyCabinet" class="sideLink">Личный кабинет</a><br>
+    </aside>
+    <h1 style="text-align: center; margin: 0px 150px 0px 0px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Зарегистрироваться</h1>
+    <div style="margin: auto; width: 100%;">
+        <input type="text" name="loginBox" class="centerClass" placeholder="Введите логин"><br>
+        <input type="password" name="passBox" class="centerClass" placeholder="Введите пароль"><br>
+        <input type="email" name="emailBox" class="centerClass" placeholder="Введите email"><br>
+        <input type="date" name="dateBox" class="centerClass" placeholder="Введите дату рождеиня"><br>
+        <a href="\Main\Auth"><input type="button" value="Зарегистрироваться" id="RegRegButton"></a><br>
+    </div>
+</body>
+
+</html>

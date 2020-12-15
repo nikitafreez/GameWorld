@@ -1,0 +1,106 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GameWorld</title>
+    <link rel="stylesheet" href="~/css/MyCSS.css">
+</head>
+
+<body style="background: rgb(238, 238, 238);">
+    <nav style="background: white; margin: -8px; padding: 0px;">
+        <a href="\Main\Auth" id="LogInBtnLink">
+            <div id="LogInBtn">Войти</div>
+        </a>
+        <a href="\Main\Cart" id="CartBtnLink">
+            <div id="CartBtn">🛒 Корзина</div>
+        </a>
+        <a href="\Main\About" id="CartBtnLink">
+            <div id="CartBtn">🛈 О нас</div>
+        </a>
+        <input type="search" name="searchBox" id="searchBox" placeholder="Поиск по сайту">
+        <a href="\Main\Main"><img src="~/images/11037Demo.png" class="logo"></a>
+        <hr noshade size="0px" color="lightgray">
+    </nav>
+    <br><br><br><br>
+    <aside class="assideBar">
+        <a href="\Main\Main" class="sideLink">Главная</a><br>
+        <a href="\Main\Catalog" class="sideLink">Каталог товаров</a>
+        <a href="\Main\About" class="sideLink">О нас</a><br>
+        <a href="\Main\Cart" class="sideLink">Корзина</a><br>
+        <a href="\Main\Auth" class="sideLink">Войти</a><br>
+        <a href="\Main\MyCabinet" class="sideLink">Личный кабинет</a><br>
+    </aside>
+
+    <aside class="OrderingBar" style="float: right;">
+        <span class="OrderingText">
+            Итого: 2 товара на 26780
+            руб.
+        </span><br><br>
+        <span class="OrderingText">Платёжная информация:</span><br>
+        <form>
+            <input type="email" style="width: 335px;" placeholder="Эл. почта" name="emailOrder"
+                   class="OrderingForms"><br>
+            <input type="text" style="width: 170px;" placeholder="Номер карты" maxlength="16" name="cardNum"
+                   class="OrderingForms">
+            <input type="text" style="width: 70px;" placeholder="CVC" maxlength="3" name="CVCNum" class="OrderingForms">
+            <input type="text" style="width: 80px;" placeholder="Год" maxlength="4" name="cardYear"
+                   class="OrderingForms">
+            <input type="button" value="Оформить заказ" id="OrderingInBtn"><br>
+        </form>
+    </aside>
+
+
+    <div style="margin-bottom: 50px;">
+        <span style="margin-left: 50px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 22px;">Корзина</span>
+        <span style=" font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(143, 143, 143); font-size: 14px; margin-left: 10px;">
+            2 товара
+        </span>
+        <table class="CartCardStyle">
+            <tr>
+                <td rowspan="2" style="width: 50px;">
+                    <img src="~/images/NSwitch-image.jpg" style="padding: 10px;">
+                </td>
+                <td style="height: 230px; padding-top: 30px;">
+                    <span class="CartProductName">Nintendo Switch</span><br>
+                </td>
+                <td style="padding-top: 30px; text-align: right;">
+                    <span class="CartProductPrice">22990 руб.</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; padding-bottom: 10px;">
+                    <a href="#" class="CartDel">Удалить</a><br>
+                </td>
+            </tr>
+        </table>
+
+        <table class="CartCardStyle">
+            <tr>
+                <td rowspan="2" style="width: 50px;">
+                    <img src="~/images/Animal-image.jpg" style="padding: 10px;">
+                </td>
+                <td style="height: 230px; padding-top: 30px; text-align: left;">
+                    <span class="CartProductName">Animal Crossing: New Horizons</span><br>
+                </td>
+                <td style="padding-top: 30px; text-align: right;">
+                    <span class="CartProductPrice">
+                        3790
+                        руб.
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; padding-bottom: 10px;">
+                    <a href="#" class="CartDel">Удалить</a><br>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
