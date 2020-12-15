@@ -2,20 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GameWorld.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GameWorld.Controllers
 {
     public class MainController : Controller
     {
+
+        private ApplicationContext db;
+
+        public MainController(ApplicationContext context)
+        {
+            this.db = context;
+        }
+
+        #region Создание представлений
         public IActionResult Main() //complete
         {
             return View();
         }
 
-        public IActionResult Catalog() //complete
+        public async Task<IActionResult> Catalog() //complete
         {
-            return View();
+            
+            return View(await db.Products.ToListAsync());
         }
 
         public IActionResult Cart() //complete
@@ -47,5 +59,6 @@ namespace GameWorld.Controllers
         {
             return View();
         }
+        #endregion
     }
 }
