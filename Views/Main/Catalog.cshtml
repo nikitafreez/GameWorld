@@ -19,15 +19,26 @@
         margin-right: 330px;
         margin-left: auto;
     }
-
-    tr,
+ 
+    /* tr,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 10px;
+        height: auto;
+        width: 270px;
+    }*/
+    tr {
+        height: auto;
+    }
     td {
         border: 1px solid black;
         border-collapse: collapse;
         text-align: center;
         padding: 10px;
         height: 420px;
-        width: 250px;
+        width: 270px;
     }
 </style>
 
@@ -43,7 +54,6 @@
             <div id="CartBtn">🛈 О нас</div>
         </a>
         <input type="search" name="searchBox" id="searchBox" placeholder="Поиск по сайту">
-        <!-- <div class="logo">GameWorld - Игровой магазин</div><br><br> -->
         <a href="\Main\Main"><img src="~/images/11037Demo.png" class="logo"></a>
         <hr noshade size="0px" color="lightgray">
     </nav>
@@ -84,123 +94,38 @@
         <hr>
     </aside>
     <div id="MostPopular"> Все товары</div>
-    <table style="margin-bottom: 100px;">
-        @foreach(var item in Model)
-        {
-            <tr>
+    <table style="margin-bottom: 100px">
+        @{ 
+            int counter = 1;
+        }
+        @foreach (var item in Model)
+        { 
+            
+            @if (counter % 3 == 0)
+            {
                 <td>
                     <a href="#" class="productName" style="color: blue;">
+                        <img src="~/images/@item.Product_Image"/><br />
                         @item.Product_Title
                     </a><br>
                     <div class="productPrice">@item.Product_Price руб.</div>
                     <input type="button" value="Купить" class="BuyBtn">
                 </td>
-            </tr>
+                <tr></tr>
+            }
+            @if (counter % 3 != 0)
+            {
+                <td>
+                    <a href="#" class="productName" style="color: blue;">
+                        <img src="~/images/@item.Product_Image" /><br />
+                        @item.Product_Title
+                    </a><br>
+                    <div class="productPrice">@item.Product_Price руб.</div>
+                    <input type="button" value="Купить" class="BuyBtn">
+                </td>
+            }
+            counter++;
         }
-        @*<tr>
-                <td>
-                    <a href="#" class="productName" style="color: blue;">
-                        <img src="~/images/PS5-image.jpg"><br>
-                        PlayStation 5: Digital Edition
-                    </a><br>
-                    <div class="productPrice">37990 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-                <td>
-                    <a href="#" class="productName" style="color: green;">
-                        <img src="~/images/XSex-image.jpg"><br>
-                        Xbox Series X
-                    </a><br>
-                    <div class="productPrice">45590 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-                <td>
-                    <a href="#" class="productName" style="color: crimson;">
-                        <img src="~/images/NSwitch-image.jpg"><br>
-                        Nintendo Switch
-                    </a><br>
-                    <div class="productPrice">22990 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="#" class="productName" style="color: blue;">
-                        <img src="~/images/PS4Bundle-image.jpg"><br>
-                        PlayStation 4 1TB GTS/HZD/SpiderM/PS+ 3мес.
-                    </a><br>
-                    <div class="productPrice">29 990 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-                <td>
-                    <a href="#" class="productName" style="color: green;">
-                        <img src="~/images/XOneBundle-image.jpg"><br>
-                        Xbox One Microsoft S 1TB + Forza Horizon 4 + LEGO Speed Champions
-                    </a><br>
-                    <div class="productPrice">23 990 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-                <td>
-                    <a href="#" class="productName" style="color: crimson;">
-                        <img src="~/images/NSwitchLite-image.jpg"><br>
-                        Nintendo Switch Lite желтый
-                    </a><br>
-                    <div class="productPrice">16990 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="#" class="productName" style="color: blue;">
-                        <img src="~/images/FF-image.jpg"><br>
-                        Final Fantasy VII Remake
-                    </a><br>
-                    <div class="productPrice">4490 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-                <td>
-                    <a href="#" class="productName" style="color: blue;">
-                        <img src="~/images/BB-image.jpg"><br>
-                        Bloodborne. Хиты PlayStation
-                    </a><br>
-                    <div class="productPrice">1350 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-                <td>
-                    <a href="#" class="productName" style="color: blue;">
-                        <img src="~/images/MediEvil-image.jpg"><br>
-                        MediEvil
-                    </a><br>
-                    <div class="productPrice">1990 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="#" class="productName" style="color: blue;">
-                        <img src="~/images/Danganronpa-image.jpg"><br>
-                        Danganronpa Trilogy (Трилогия)
-                    </a><br>
-                    <div class="productPrice">3650 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-                <td>
-                    <a href="#" class="productName" style="color: green;">
-                        <img src="~/images/Forza-image.jpg"><br>
-                        Forza Horizon 4
-                    </a><br>
-                    <div class="productPrice">3990 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-                <td>
-                    <a href="#" class="productName" style="color: crimson;">
-                        <img src="~/images/Animal-image.jpg"><br>
-                        Animal Crossing: New Horizons
-                    </a><br>
-                    <div class="productPrice">3 749 руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
-                </td>
-            </tr>*@
     </table>
     </div>
 </body>

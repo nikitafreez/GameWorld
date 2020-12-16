@@ -6,10 +6,11 @@ namespace GameWorld.Models
     public class Product
     {
         [Key]
-        public int ID_Product { get; set; }
+        public int ID_Product { get; set; } = 1;
         public string Product_Title { get; set; }
         public string Product_Description { get; set; }
         public int Product_Price { get; set; }
+        public string Product_Image { get; set; }
     }
 
     public class ApplicationContext : DbContext
