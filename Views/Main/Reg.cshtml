@@ -1,4 +1,4 @@
-﻿
+﻿@model GameWorld.Models.User
 @{
     Layout = null;
 }
@@ -37,13 +37,62 @@
         <a href="\Main\MyCabinet" class="sideLink">Личный кабинет</a><br>
     </aside>
     <h1 style="text-align: center; margin: 0px 150px 0px 0px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Зарегистрироваться</h1>
-    <div style="margin: auto; width: 100%;">
-        <input type="text" name="loginBox" class="centerClass" placeholder="Введите логин"><br>
-        <input type="password" name="passBox" class="centerClass" placeholder="Введите пароль"><br>
-        <input type="email" name="emailBox" class="centerClass" placeholder="Введите email"><br>
-        <input type="date" name="dateBox" class="centerClass" placeholder="Введите дату рождеиня"><br>
-        <a href="\Main\Auth"><input type="button" value="Зарегистрироваться" id="RegRegButton"></a><br>
+    @*<form method="post">
+            <div style="margin: auto; width: 100%;">
+                <div>
+                    <input asp-for="Nickname" type="text" name="loginBox" class="centerClass" placeholder="Введите логин">
+                    <span asp-validation-for="Nickname"></span>
+                </div>
+
+                <div>
+                    <input asp-for="Password" type="password" name="passBox" class="centerClass" placeholder="Введите пароль">
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div>
+                    <input asp-for="Email" type="email" name="emailBox" class="centerClass" placeholder="Введите email">
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div>
+                    <input asp-for="Date_Of_Birth" type="text" name="dateBox" class="centerClass" placeholder="Введите дату рождеиня">
+                    <span asp-validation-for="Date_Of_Birth"></span>
+                </div>
+                <div>
+                    <a href="\Main\Auth"><input type="submit" value="Зарегистрироваться" id="RegRegButton"></a><br>
+                </div>
+            </div>
+        </form>*@
+
+
+<form asp-antiforgery="true" asp-action="Reg" asp-controller="Main">
+    <input type="hidden" asp-for="ID_User" />
+    <div>
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <div>
+            <input type="text" class="centerClass" asp-for="User_Nickname" placeholder="Введите логин" />
+            <span asp-validation-for="User_Nickname"></span>
+        </div>
+        <div>
+            <input type="email" class="centerClass" asp-for="User_Email" placeholder="Введите email" />
+            <span asp-validation-for="User_Email"></span>
+        </div>
+        <div>
+            <input type="password" class="centerClass" asp-for="User_Password" placeholder="Введите пароль" />
+            <span asp-validation-for="User_Password"></span>
+        </div>
+        <div>
+            <input class="centerClass" asp-for="User_Year_Of_Birth" placeholder="Введите дату рождеиня" />
+            <span asp-validation-for="User_Year_Of_Birth"></span>
+        </div>
+        <div>
+            <a href="\Main\Auth"><input type="submit" value="Зарегистрироваться" id="RegRegButton"></a><br>
+        </div>
     </div>
+</form>
+
+    @section scripts{
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    }
 </body>
 
 </html>
