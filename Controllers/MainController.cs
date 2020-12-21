@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 using GameWorld.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Text.Json;
+using Microsoft.AspNetCore.Http;
 
 namespace GameWorld.Controllers
 {
@@ -26,19 +31,60 @@ namespace GameWorld.Controllers
 
         public async Task<IActionResult> Catalog() //complete
         {
-
             return View(await db.Products.ToListAsync());
         }
 
         public IActionResult Cart() //complete
         {
-            return View();
+            Cart cart = new Cart();
+            if (HttpContext.Session.Keys.Contains("Cart"))
+                cart = JsonSerializer.Deserialize<Cart>(HttpContext.Session.GetString("Cart"));
+            return View(cart);
         }
 
+        [HttpGet]
         public IActionResult Auth() //complete
         {
             return View();
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Auth(UserEnter model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        UserEnter user = await db.UsersEnter.FirstOrDefaultAsync(u => u.User_Nickname == model.User_Nickname && u.User_Password == model.User_Password);
+        //        if (user != null)
+        //        {
+        //            await Authenticate(model.User_Nickname);
+
+        //            return RedirectToAction("/");
+        //        }
+        //        ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+        //    }
+        //    return View(model);
+        //}
+
+        //private async Task Authenticate(string userName)
+        //{
+        //    // создаем один claim
+        //    var claims = new List<Claim>
+        //    {
+        //        new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+        //    };
+        //    // создаем объект ClaimsIdentity
+        //    ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+        //    // установка аутентификационных куки
+        //    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
+        //}
+
+        //public async Task<IActionResult> Logout()
+        //{
+        //    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        //    return RedirectToAction("Main", "Auth");
+        //}
+
 
         public IActionResult About() //complete
         {

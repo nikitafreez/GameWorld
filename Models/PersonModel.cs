@@ -29,10 +29,10 @@ namespace GameWorld.Models
         public int User_Year_Of_Birth { get; set; }
     }
 
-    public class SaveContext : DbContext
+    public class UserContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public SaveContext(DbContextOptions<SaveContext> options) : base(options)
+        public UserContext(DbContextOptions<UserContext> options) : base(options)
         {
 
         }

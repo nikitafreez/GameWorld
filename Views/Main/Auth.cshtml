@@ -1,4 +1,4 @@
-﻿
+﻿@model GameWorld.Models.LoginModel
 @{
     Layout = null;
 }
@@ -37,15 +37,36 @@
         <a href="\Main\MyCabinet" class="sideLink">Личный кабинет</a><br>
     </aside>
     <h1 style="text-align: center; margin: 0px 150px 0px 0px; font-family: Verdana, Geneva, Tahoma, sans-serif;">Войти</h1>
-    <div>
-        <input type="text" name="loginBox" class="centerClass" placeholder="Введите логин"><br>
-        <input type="password" name="passBox" class="centerClass" placeholder="Введите пароль"><br>
-        <input type="button" value="Войти" id="AuthButton"><br>
-        <a href="\Main\Reg" id="RegButton">Зарегистрироваться</a><br>
-        <div style="margin-right: 145px;text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">
-            или<br>
-            <a href="\Main\Recovery" id="RecoveryBtn" style="margin-left: 155px; text-align: center;">Восстановить пароль</a>
+    @*<div>
+            <input type="text" name="loginBox" class="centerClass" placeholder="Введите логин"><br>
+            <input type="password" name="passBox" class="centerClass" placeholder="Введите пароль"><br>
+            <input type="button" value="Войти" id="AuthButton"><br>
+            <a href="\Main\Reg" id="RegButton">Зарегистрироваться</a><br>
+            <div style="margin-right: 145px;text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                или<br>
+                <a href="\Main\Recovery" id="RecoveryBtn" style="margin-left: 155px; text-align: center;">Восстановить пароль</a>
+            </div>
+        </div>*@
+
+    <form asp-action="Auth" asp-controller="Main" asp-anti-forgery="true">
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <div>
+            <div class="form-group">
+                <input type="text" class="centerClass" placeholder="Введите логин" asp-for="User_Nickname" />
+                <span asp-validation-for="User_Nickname" />
+            </div>
+            <div class="form-group">
+                <input type="password" class="centerClass" placeholder="Введите пароль" asp-for="User_Password" />
+                <span asp-validation-for="User_Password" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Войти" id="AuthButton"><br>
+            </div>
         </div>
+    </form>
+    <div style="margin-right: 145px;text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        или<br>
+        <a href="\Main\Recovery" id="RecoveryBtn" style="margin-left: 155px; text-align: center;">Восстановить пароль</a>
     </div>
 
 </body>

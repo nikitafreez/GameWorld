@@ -19,9 +19,11 @@
         margin-right: 330px;
         margin-left: auto;
     }
+
     tr {
         height: auto;
     }
+
     td {
         border: 1px solid black;
         border-collapse: collapse;
@@ -85,20 +87,20 @@
     </aside>
     <div id="MostPopular"> Все товары</div>
     <table style="margin-bottom: 100px">
-        @{ 
+        @{
             int counter = 1;
         }
         @foreach (var item in Model)
-        { 
+        {
             @if (counter % 3 == 0)
             {
                 <td>
                     <a href="#" class="productName" style="color: blue;">
-                        <img src="~/images/@item.Product_Image"/><br />
+                        <img src="~/images/@item.Product_Image" /><br />
                         @item.Product_Title
                     </a><br>
                     <div class="productPrice">@item.Product_Price руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
+                    <a href="/Cart/AddToCart?ID=@item.ID_Product"><input type="submit" value="Купить" class="BuyBtn"></a>
                 </td>
                 <tr></tr>
             }
@@ -110,7 +112,7 @@
                         @item.Product_Title
                     </a><br>
                     <div class="productPrice">@item.Product_Price руб.</div>
-                    <input type="button" value="Купить" class="BuyBtn">
+                    <a href="/Cart/AddToCart?ID=@item.ID_Product"><input type="submit" value="Купить" class="BuyBtn"></a>
                 </td>
             }
             counter++;
