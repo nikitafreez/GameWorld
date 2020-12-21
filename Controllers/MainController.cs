@@ -24,9 +24,9 @@ namespace GameWorld.Controllers
             this.db = context;
         }
         #region Создание представлений
-        public IActionResult Main() //complete
+        public async Task<IActionResult> Main() //complete
         {
-            return View();
+            return View(await db.Products.ToListAsync());
         }
 
         public async Task<IActionResult> Catalog() //complete

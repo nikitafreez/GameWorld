@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<GameWorld.Models.Product>
 @{
     Layout = null;
 }
@@ -48,42 +48,66 @@
         <hr noshade size="0px" color="lightgray">
     </nav>
     <br><br><br><br>
-                <aside class="assideBar">
-                    <a href="\Main\Main" class="sideLink">Главная</a><br>
-                    <a href="\Main\Catalog" class="sideLink">Каталог товаров</a>
-                    <a href="\Main\About" class="sideLink">О нас</a><br>
-                    <a href="\Main\Cart" class="sideLink">Корзина</a><br>
-                    <a href="\Main\Auth" class="sideLink">Войти</a><br>
-                    <a href="\Main\MyCabinet" class="sideLink">Личный кабинет</a><br>
-                </aside>
+    <aside class="assideBar">
+        <a href="\Main\Main" class="sideLink">Главная</a><br>
+        <a href="\Main\Catalog" class="sideLink">Каталог товаров</a>
+        <a href="\Main\About" class="sideLink">О нас</a><br>
+        <a href="\Main\Cart" class="sideLink">Корзина</a><br>
+        <a href="\Main\Auth" class="sideLink">Войти</a><br>
+        <a href="\Main\MyCabinet" class="sideLink">Личный кабинет</a><br>
+    </aside>
     <div id="MostPopular"> Самые популярные товары</div>
-    <table>
-        <tr class="mainTable">
-            <td class="mainTable">
+
+    <table style="margin-bottom: 100px">
+        @{
+            int counter = 1;
+        }
+        @foreach (var item in Model)
+        {
+            if(counter == 4)
+            {
+                break;
+            }
+            <td>
                 <a href="#" class="productName" style="color: blue;">
-                    <img src="~/images/PS5-image.jpg"><br>
-                    PlayStation 5: Digital Edition
+                    <img src="~/images/@item.Product_Image" /><br />
+                    @item.Product_Title
                 </a><br>
-                <div class="productPrice">37990 руб.</div>
-                <input type="button" value="Купить" class="BuyBtn">
+                <div class="productPrice">@item.Product_Price руб.</div>
+                <a href="/Cart/AddToCart?ID=@item.ID_Product"><input type="submit" value="Купить" class="BuyBtn"></a>
             </td>
-            <td class="mainTable">
-                <a href="#" class="productName" style="color: green;">
-                    <img src="~/images/XSex-image.jpg"><br>
-                    Xbox Series X
-                </a><br>
-                <div class="productPrice">45590 руб.</div>
-                <input type="button" value="Купить" class="BuyBtn">
-            </td>
-            <td class="mainTable">
-                <a href="#" class="productName" style="color: crimson;">
-                    <img src="~/images/NSwitch-image.jpg"><br>
-                    Nintendo Switch
-                </a><br>
-                <div class="productPrice">22990 руб.</div>
-                <input type="button" value="Купить" class="BuyBtn">
-            </td>
-        </tr>
-    </table><br>
+            counter++;
+        }
+    </table>
+
+
+    @*<table>
+            <tr class="mainTable">
+                <td class="mainTable">
+                    <a href="#" class="productName" style="color: blue;">
+                        <img src="~/images/PS5-image.jpg"><br>
+                        PlayStation 5: Digital Edition
+                    </a><br>
+                    <div class="productPrice">37990 руб.</div>
+                    <input type="button" value="Купить" class="BuyBtn">
+                </td>
+                <td class="mainTable">
+                    <a href="#" class="productName" style="color: green;">
+                        <img src="~/images/XSex-image.jpg"><br>
+                        Xbox Series X
+                    </a><br>
+                    <div class="productPrice">45590 руб.</div>
+                    <input type="button" value="Купить" class="BuyBtn">
+                </td>
+                <td class="mainTable">
+                    <a href="#" class="productName" style="color: crimson;">
+                        <img src="~/images/NSwitch-image.jpg"><br>
+                        Nintendo Switch
+                    </a><br>
+                    <div class="productPrice">22990 руб.</div>
+                    <input type="button" value="Купить" class="BuyBtn">
+                </td>
+            </tr>
+        </table><br>*@
 </body>
 </html>
